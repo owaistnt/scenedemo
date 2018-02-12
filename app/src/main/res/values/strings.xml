@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">SceneDemo</string>
+    <string name="login">Login</string>
+    <string name="password">Password</string>
+    <string name="email">Email</string>
+    <string name="re_enter_password">Re-enter Password</string>
+    <string name="already_a_user">Already a user?</string>
 </resources>

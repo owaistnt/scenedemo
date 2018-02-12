@@ -16,7 +16,7 @@ public class MainActivity extends BaseActivity implements IMainContract.IView{
 
     @Override
     public void showSplash() {
-        
+
     }
 
     @Override
