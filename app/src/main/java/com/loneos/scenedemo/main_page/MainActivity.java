@@ -1,10 +1,15 @@
 package com.loneos.scenedemo.main_page;
 
 import android.os.Bundle;
+import android.support.animation.DynamicAnimation;
+import android.support.animation.SpringAnimation;
+import android.support.transition.ChangeBounds;
 import android.support.transition.Scene;
 import android.support.transition.TransitionManager;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.AnimationSet;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 
 import com.loneos.scenedemo.R;
@@ -57,7 +62,8 @@ public class MainActivity extends BaseActivity implements IMainContract.IView{
        /* TransitionManager transitionManager = new TransitionManager();
         transitionManager.setTransition(mSceneSplash, mSceneLogin, new ChangeBounds());
         transitionManager.transitionTo(mSceneLogin);*/
-
+       enterAnimation();
+       TransitionManager.go(mSceneLogin, new ChangeBounds());
         Button btnSignIn = mSceneLogin.getSceneRoot().findViewById(R.id.btnSignIn);
         btnSignIn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -73,6 +79,11 @@ public class MainActivity extends BaseActivity implements IMainContract.IView{
                 mPresenter.userIsNotRegistered();
             }
         });
+
+
+
+
+
     }
 
     private void enterAnimation(){
@@ -80,6 +91,15 @@ public class MainActivity extends BaseActivity implements IMainContract.IView{
             @Override
             public void run() {
                 //todo Animate Textviews.
+                View view =mSceneLogin.getSceneRoot().findViewById(R.id.editText);
+                View view2 =mSceneLogin.getSceneRoot().findViewById(R.id.editText2);
+                AnimationSet animationSet = (AnimationSet) AnimationUtils.loadAnimation(MainActivity.this, R.anim.translate_up);
+                view.startAnimation(animationSet);
+                view2.startAnimation(animationSet);
+                SpringAnimation slide;
+                slide = new SpringAnimation(view, DynamicAnimation.TRANSLATION_Y, 0);
+                slide.getSpring().setDampingRatio(0.4f).setStiffness(500);
+                slide.setStartValue(400).start();
             }
         });
     }
