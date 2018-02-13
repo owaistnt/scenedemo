@@ -1,12 +1,14 @@
 package com.loneos.scenedemo.main_page;
 
 import android.os.Bundle;
+import android.support.transition.Scene;
 
 import com.loneos.scenedemo.R;
 import com.loneos.scenedemo.base.BaseActivity;
 
 public class MainActivity extends BaseActivity implements IMainContract.IView{
 
+    Scene mSceneSplash, mSceneLogin, mSceneSignUp, mSceneLoading, mSceneEmpty;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

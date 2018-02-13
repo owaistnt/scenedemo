@@ -72,4 +72,8 @@
         <item name="android:paddingRight">48dp</item>
     </style>
 
+    <style name="TextInput" >
+        <item name="android:background">@drawable/input_background</item>
+    </style>
+
 </resources>
