@@ -31,6 +31,18 @@ public class MainPresenter implements IMainContract.IPresenter<IMainContract.IVi
     @Override
     public void start() {
         getMvpView().showSplash();
+        new CountDownTimer(3000, 1000){
+
+            @Override
+            public void onTick(long l) {
+
+            }
+
+            @Override
+            public void onFinish() {
+                getMvpView().showLogin();
+            }
+        }.start();
     }
 
     @Override
@@ -40,6 +52,7 @@ public class MainPresenter implements IMainContract.IPresenter<IMainContract.IVi
 
     @Override
     public void signIn() {
+            getMvpView().showLoadingScreen();
             new CountDownTimer(3000, 1000){
 
                 @Override
@@ -50,7 +63,7 @@ public class MainPresenter implements IMainContract.IPresenter<IMainContract.IVi
                 @Override
                 public void onFinish() {
                     if (getMvpView().isNetworkConnected()) {
-                        getMvpView().showLoadingScreen();
+                        getMvpView().goToNextScreen();
                     }else{
                         getMvpView().showEmptyScreen();
                     }

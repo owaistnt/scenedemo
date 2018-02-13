@@ -58,11 +58,11 @@
         app:layout_constraintTop_toBottomOf="@+id/editText5" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/btnSignUp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:text="Register"
+        android:text="@string/signup"
         style="@style/PaddedColoredButton"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -79,6 +79,6 @@
         android:textAllCaps="false"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button3" />
+        app:layout_constraintTop_toBottomOf="@+id/btnSignUp" />
 
 </android.support.constraint.ConstraintLayout>
