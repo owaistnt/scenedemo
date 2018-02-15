@@ -1,8 +1,6 @@
 package com.loneos.scenedemo.main_page;
 
 import android.os.Bundle;
-import android.support.animation.DynamicAnimation;
-import android.support.animation.SpringAnimation;
 import android.support.transition.ChangeBounds;
 import android.support.transition.Scene;
 import android.support.transition.TransitionManager;
@@ -96,10 +94,10 @@ public class MainActivity extends BaseActivity implements IMainContract.IView{
                 AnimationSet animationSet = (AnimationSet) AnimationUtils.loadAnimation(MainActivity.this, R.anim.translate_up);
                 view.startAnimation(animationSet);
                 view2.startAnimation(animationSet);
-                SpringAnimation slide;
+               /* SpringAnimation slide;
                 slide = new SpringAnimation(view, DynamicAnimation.TRANSLATION_Y, 0);
                 slide.getSpring().setDampingRatio(0.4f).setStiffness(500);
-                slide.setStartValue(400).start();
+                slide.setStartValue(400).start();*/
             }
         });
     }
